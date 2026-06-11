@@ -1,0 +1,30 @@
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\bin\Debug\DVDL System.exe.config
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\bin\Debug\DVDL System.exe
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\bin\Debug\DVDL System.pdb
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\bin\Debug\DVDLBusinussLayer.dll
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\bin\Debug\DVDLDataAccessLayer.dll
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\bin\Debug\DVDLBusinussLayer.pdb
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\bin\Debug\DarkUI.xml
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\bin\Debug\DVDLDataAccessLayer.pdb
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDLPresentaionLayer.csproj.AssemblyReference.cache
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.frmTest.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.Mainfrm.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.People.frmAddEditPerson.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.People.frmManagePeople.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.People.frmPersonDetails.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.Properties.Resources.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDLPresentaionLayer.csproj.GenerateResource.cache
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDLPresentaionLayer.csproj.CoreCompileInputs.cache
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDLPres.3D452FF1.Up2Date
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL System.exe
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL System.pdb
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.People.Controls.ctrlPersonCard.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.People.Controls.ctrlPersonCardWithFIlter.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL System.exe.config
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.People.frmFindPerson.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.Users.frmManageUsers.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.Users.frmAddEditNewUser.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.Users.frmChangePassword.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.Users.Controls.ctrlUserInfo.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.frmLogin.resources
+C:\Users\abdulaziz\Desktop\DVLD\DVDL System\obj\Debug\DVDL_System.Users.frmShowUserInfo.resources

@@ -55,6 +55,7 @@ namespace DVDL_System
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             clsGeneral.CurrentUser = null;
+            frmLogin Login = new frmLogin();
             _frmLogin.Show();
             this.Close();
         }

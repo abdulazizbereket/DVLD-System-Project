@@ -13,6 +13,7 @@ namespace DVDL_System.Users
 {
     public partial class frmManageUsers : Form
     {
+        private static DataTable _dtAllUsers;
         public frmManageUsers()
         {
             InitializeComponent();
@@ -31,9 +32,9 @@ namespace DVDL_System.Users
         }
         private void _RefreshUsers()
         {
-            DataTable dt = new DataTable();
-            dt = clsUser.GetAllUsers();
-            dgvUsers.DataSource = dt;
+            _dtAllUsers = clsUser.GetAllUsers();
+            dgvUsers.DataSource = _dtAllUsers;
+            cmbFilter.SelectedIndex = 0;
             lblRecords.Text = dgvUsers.Rows.Count.ToString();
         }
         private void frmManageUsers_Load(object sender, EventArgs e)
@@ -106,6 +107,94 @@ namespace DVDL_System.Users
 
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFilter.Text == "Is Active")
+            {
+                txtFilterText.Visible = false;
+                cmbIsActive.Visible = true;
+                cmbIsActive.SelectedIndex = 0;
+                cmbIsActive.Focus();
+            }
+            else
+            {
+                txtFilterText.Visible = (cmbFilter.Text.Trim() != "None");
+                cmbIsActive.Visible = false;
+                txtFilterText.Text = "";
+                txtFilterText.Focus();
+            }
+        }
+
+        private void txtFilterText_TextChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "";
+            switch (cmbFilter.Text)
+            {
+                case "User ID":
+                    FilterColumn = "UserID";
+                    break;
+                case "Person ID":
+                    FilterColumn = "PersonID";
+                    break;
+                case "UserName":
+                    FilterColumn = "UserName";
+                    break;
+                case "Full Name":
+                    FilterColumn = "FullName";
+                    break;
+                default:
+                    FilterColumn = "None";
+                    break;
+            }
+            
+
+            if (txtFilterText.Text.Trim() == "" || FilterColumn == "None")
+            {
+                _dtAllUsers.DefaultView.RowFilter = "";
+                lblRecords.Text = dgvUsers.Rows.Count.ToString();
+                return;
+            }
+
+
+            if (FilterColumn != "UserName" && FilterColumn != "FullName")
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterText.Text.Trim());
+            else
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] Like '{1}%'", FilterColumn, txtFilterText.Text.Trim());
+
+            lblRecords.Text = dgvUsers.Rows.Count.ToString();
+        }
+
+        private void cmbIsActive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "IsActive";
+            string FilterValue = cmbIsActive.Text;
+            switch (FilterValue)
+            {
+                case "All":
+                    break;
+                case "Yes":
+                    FilterValue = "1";
+                    break;
+                case "No":
+                    FilterValue = "0";
+                    break;
+
+            }
+            if (FilterValue == "All")
+                _dtAllUsers.DefaultView.RowFilter = "";
+            else
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}]  = {1}", FilterColumn, FilterValue);
+
+            lblRecords.Text = dgvUsers.Rows.Count.ToString();
+        }
+
+        private void txtFilterText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cmbFilter.Text == "Person ID" || cmbFilter.Text == "User ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
 
         }
     }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,8 +20,7 @@ namespace DVDL_System.Users
         {
             InitializeComponent();
             _UserID = UserID;
-            _User = clsUser.Find(_UserID);
-            ctrlUserInfo1.LoadUserInfo(_User.UserId);
+
         }
 
       
@@ -52,7 +52,7 @@ namespace DVDL_System.Users
 
         private void txtConfirm_Validating(object sender, CancelEventArgs e)
         {
-            if (txtConfirm.Text != txtNewPassword.Text)
+            if (txtConfirm.Text.Trim() != txtNewPassword.Text.Trim())
             {
                 errorProvider1.SetError(txtConfirm, "Incurrect This Filed should Be Same As The Password");
                 e.Cancel = true;
@@ -67,13 +67,14 @@ namespace DVDL_System.Users
 
         private void txtCurrentPassword_Validating(object sender,CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCurrentPassword.Text))
+            if (string.IsNullOrWhiteSpace(txtCurrentPassword.Text.Trim()))
             {
                 errorProvider1.SetError(
                     txtCurrentPassword,
                     "Current password is required.");
 
                 e.Cancel = true;
+                return;
             }
             else if (!_User.CheckIfPasswordIsTrue(txtCurrentPassword.Text))
             {
@@ -82,6 +83,7 @@ namespace DVDL_System.Users
                     "Current password is incorrect.");
 
                 e.Cancel = true;
+                return;
             }
             else
             {
@@ -93,6 +95,11 @@ namespace DVDL_System.Users
 
         private void txtNewPassword_Validating(object sender, CancelEventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNewPassword.Text.Trim()))
+            {
+                errorProvider1.SetError(txtNewPassword, "The New Password Is Required");
+                e.Cancel = true;
+            }
             if (txtCurrentPassword.Text == txtNewPassword.Text)
             {
                 errorProvider1.SetError(txtNewPassword, "The New Password Shouldn't Be The Same As The Old Password");
@@ -105,8 +112,28 @@ namespace DVDL_System.Users
 
             }
         }
-
+        private void _ResetDefualtValues()
+        {
+            txtCurrentPassword.Text = "";
+            txtNewPassword.Text = "";
+            txtConfirm.Text = "";
+            txtCurrentPassword.Focus(); 
+        }
         private void frmChangePassword_Load(object sender, EventArgs e)
+        {
+            _ResetDefualtValues();
+           
+            _User = clsUser.Find(_UserID);
+            if (_User == null)
+            {
+                MessageBox.Show($"Couldn't Find The User With This ID = {_UserID}" , "Error",MessageBoxButtons.OK , MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+            ctrlUserInfo1.LoadUserInfo(_User.UserId);
+        }
+
+        private void ctrlUserInfo1_Load(object sender, EventArgs e)
         {
 
         }

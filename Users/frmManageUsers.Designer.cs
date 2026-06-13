@@ -40,13 +40,14 @@
             this.sendSMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFilterText = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cmbIsActive = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -143,21 +144,28 @@
             this.cmbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbFilter.FormattingEnabled = true;
             this.cmbFilter.Items.AddRange(new object[] {
-            "UserName",
-            "User ID ",
-            "person ID "});
+            "None ",
+            "User ID",
+            "UserName ",
+            "Person ID",
+            "Full Name",
+            "Is Active"});
             this.cmbFilter.Location = new System.Drawing.Point(126, 237);
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.Size = new System.Drawing.Size(223, 30);
             this.cmbFilter.TabIndex = 2;
+            this.cmbFilter.SelectedIndexChanged += new System.EventHandler(this.cmbFilter_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtFilterText
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(356, 238);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 28);
-            this.textBox1.TabIndex = 3;
+            this.txtFilterText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtFilterText.Location = new System.Drawing.Point(356, 238);
+            this.txtFilterText.Name = "txtFilterText";
+            this.txtFilterText.Size = new System.Drawing.Size(213, 28);
+            this.txtFilterText.TabIndex = 3;
+            this.txtFilterText.Visible = false;
+            this.txtFilterText.TextChanged += new System.EventHandler(this.txtFilterText_TextChanged);
+            this.txtFilterText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterText_KeyPress);
             // 
             // pictureBox1
             // 
@@ -226,18 +234,34 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Manage Users";
             // 
+            // cmbIsActive
+            // 
+            this.cmbIsActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbIsActive.FormattingEnabled = true;
+            this.cmbIsActive.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.cmbIsActive.Location = new System.Drawing.Point(355, 238);
+            this.cmbIsActive.Name = "cmbIsActive";
+            this.cmbIsActive.Size = new System.Drawing.Size(116, 30);
+            this.cmbIsActive.TabIndex = 14;
+            this.cmbIsActive.Visible = false;
+            this.cmbIsActive.SelectedIndexChanged += new System.EventHandler(this.cmbIsActive_SelectedIndexChanged);
+            // 
             // frmManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 830);
+            this.Controls.Add(this.cmbIsActive);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFilterText);
             this.Controls.Add(this.cmbFilter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvUsers);
@@ -261,7 +285,7 @@
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbFilter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFilterText;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
@@ -275,5 +299,6 @@
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendSMSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cmbIsActive;
     }
 }

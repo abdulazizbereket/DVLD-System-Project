@@ -164,6 +164,7 @@
             this.ctrlUserInfo1.Name = "ctrlUserInfo1";
             this.ctrlUserInfo1.Size = new System.Drawing.Size(1025, 515);
             this.ctrlUserInfo1.TabIndex = 2;
+            this.ctrlUserInfo1.Load += new System.EventHandler(this.ctrlUserInfo1_Load);
             // 
             // frmChangePassword
             // 

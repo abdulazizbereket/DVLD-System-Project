@@ -154,6 +154,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(555, 655);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label10
             // 
@@ -169,7 +170,7 @@
             this.txtPassword.Location = new System.Drawing.Point(258, 260);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(224, 26);
+            this.txtPassword.Size = new System.Drawing.Size(224, 30);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.NullValidate);
             // 
@@ -179,7 +180,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label11.Location = new System.Drawing.Point(45, 258);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(112, 24);
+            this.label11.Size = new System.Drawing.Size(142, 29);
             this.label11.TabIndex = 16;
             this.label11.Text = "Password :";
             // 
@@ -196,7 +197,7 @@
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUserName.Location = new System.Drawing.Point(258, 221);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(224, 26);
+            this.txtUserName.Size = new System.Drawing.Size(224, 30);
             this.txtUserName.TabIndex = 1;
             this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.NullValidate);
             // 
@@ -206,7 +207,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label13.Location = new System.Drawing.Point(32, 215);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 24);
+            this.label13.Size = new System.Drawing.Size(158, 29);
             this.label13.TabIndex = 13;
             this.label13.Text = "User Name :";
             // 
@@ -229,7 +230,7 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.checkBox1.Location = new System.Drawing.Point(258, 312);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(141, 24);
+            this.checkBox1.Size = new System.Drawing.Size(165, 28);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Remember Me ";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -241,7 +242,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.Location = new System.Drawing.Point(90, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(281, 30);
+            this.label8.Size = new System.Drawing.Size(357, 37);
             this.label8.TabIndex = 0;
             this.label8.Text = "Login Into Your Account";
             // 
@@ -267,7 +268,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.Location = new System.Drawing.Point(155, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(281, 30);
+            this.label5.Size = new System.Drawing.Size(357, 37);
             this.label5.TabIndex = 0;
             this.label5.Text = "Login Into Your Account";
             // 
